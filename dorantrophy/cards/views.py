@@ -64,6 +64,7 @@ def cards(request):
 			championStats['wins'] = wins
 			championStats['losses'] = losses
 			displayChampions.append({'name':str(c), 'stats':championStats, 'mastery': masteries[c], 'masterypoint':masteries[c].points})
-		displayChampions = sorted(displayChampions, key=itemgetter('masterpoints', reverse=True)
+			displayChampions = sorted(displayChampions, key=itemgetter('masterpoints', reverse=True)
 
 
+		return HttpResposne(render(request, 'cards.html', {'champions' : displayChampions}))

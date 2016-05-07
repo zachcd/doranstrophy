@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Ball Sacks</h1>
+
+<ul>
+{% for champ in champions %}
+<li>
+	<h2>{{ champ.name }}</h2>
+	<table>
+		<th>Top KDA</th>
+		<th>Kills</th>
+		<th>Deaths</th>
+		<th>Assists</th>
+		<th>Wins</th>
+		<th>Losses</th>
+		<tr>
+			<td>{{ champ.stats.topKDA }}</td>
+			<td>{{ champ.stats.kills }}</td>
+			<td>{{ champ.stats.deaths }}</td>
+			<td>{{ champ.stats.assists }}</td>
+			<td>{{ champ.stats.wins }}</td>
+			<td>{{ champ.stats.losses }}</td>
+		</tr>
+	</table>
+</li>
+{% endfor %}
+</ul>
