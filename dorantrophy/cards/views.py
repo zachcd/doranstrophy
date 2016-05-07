@@ -32,6 +32,8 @@ def cards(request):
 			for champion, mastery in masteries:
 			if mastery.level == 3 :
 				trophyChampions[champion] = mastery
+
+		displayChampions = []
 		for c in trophyChampions:
 			topKDA = 0
 			kills = 0
@@ -53,4 +55,14 @@ def cards(request):
 							wins = win + 1
 						else:
 							losses = losses + 1
+
+			championStats = {}
+			championStats['topKDA'] = topKDA
+			championStats['kills'] = kills
+			championStats['deaths'] = deaths
+			championStats['assists'] = assists
+			championStats['wins'] = wins
+			championStats['losses'] = losses
+			displayChampions.append({'name':str(c), 'stats':championStats})
+
 
