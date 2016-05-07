@@ -27,4 +27,12 @@ def cards(request):
 			for champion, mastery in masteries:
 			if mastery.level == 3 :
 				trophyChampions[champion] = mastery
-
+		for c in trophyChampions:
+			topKDA = 0
+			Kills = 0
+			Deaths = 0
+			Assists = 0
+			Wins = 0
+			matches = riotapi.get_match_list(summ,champion_ids = c, seasons=“SEASON2016”)
+			for m in matches:
+				data = riotapi.get_match(m)
