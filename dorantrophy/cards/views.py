@@ -14,4 +14,16 @@ def cards(request):
 		summoner = posted.get('summ')
 		region = posted.get('region')
 		riotapi.set_region(region)
-		riotapi.get_summoner_by_name()
+		summ = riotapi.get_summoner_by_name(summoner)
+		masteries = riotapi.get_champion_masteries(summ)
+		champstouse = {}
+		count = 0
+		for champion, mastery in masteries:
+			if mastery.level >= 4 :
+				champstouse[champion] = mastery
+				count = count + 1
+		if count < 4:
+			for champion, mastery in masteries:
+			if mastery.level == 3 :
+				champstouse[champion] = mastery
+		
