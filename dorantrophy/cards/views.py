@@ -16,14 +16,15 @@ def cards(request):
 		riotapi.set_region(region)
 		summ = riotapi.get_summoner_by_name(summoner)
 		masteries = riotapi.get_champion_masteries(summ)
-		champstouse = {}
+		trophyChampions = {}
 		count = 0
 		#this sets up so that champions with lvl 4 or higher mastery but if less than 4 are found add more from lower lvls
 		for champion, mastery in masteries:
 			if mastery.level >= 4 :
-				champstouse[champion] = mastery
+				trophyChampions[champion] = mastery
 				count = count + 1
 		if count < 4:
 			for champion, mastery in masteries:
 			if mastery.level == 3 :
-				champstouse[champion] = mastery
+				trophyChampions[champion] = mastery
+
