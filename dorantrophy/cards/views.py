@@ -63,6 +63,7 @@ def cards(request):
 			championStats['assists'] = assists
 			championStats['wins'] = wins
 			championStats['losses'] = losses
-			displayChampions.append({'name':str(c), 'stats':championStats})
+			displayChampions.append({'name':str(c), 'stats':championStats, 'mastery': masteries[c], 'masterypoint':masteries[c].points})
+		displayChampions = sorted(displayChampions, key=itemgetter('masterpoints', reverse=True)
 
 
