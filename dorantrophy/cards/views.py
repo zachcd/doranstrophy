@@ -15,3 +15,5 @@ def cards(request):
 		region = posted.get('region')
 		riotapi.set_region(region)
 		riotapi.get_summoner_by_name()
+
+		
