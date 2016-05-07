@@ -18,6 +18,7 @@ def cards(request):
 		masteries = riotapi.get_champion_masteries(summ)
 		champstouse = {}
 		count = 0
+		#this sets up so that champions with lvl 4 or higher mastery but if less than 4 are found add more from lower lvls
 		for champion, mastery in masteries:
 			if mastery.level >= 4 :
 				champstouse[champion] = mastery
@@ -26,4 +27,3 @@ def cards(request):
 			for champion, mastery in masteries:
 			if mastery.level == 3 :
 				champstouse[champion] = mastery
-		
