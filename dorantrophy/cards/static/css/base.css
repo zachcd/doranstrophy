@@ -1,0 +1,122 @@
+#loading {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10%;
+	width: 350px;
+	height: 350px;
+}
+
+.coverflow:focus {
+	outline:none;
+}
+.coverflow {
+	margin-top: 5%;
+}
+div.cover.current { 
+	transition: color .3s linear;
+ color: white;
+ position:relative;
+ z-index: 1;
+ padding: 20px;
+  height:520px; 
+  width: 268px; 
+}
+.cover.current:before {
+	transition: all .3s linear;
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .8; 
+  z-index: -1;
+  background-image:url('/static/img/mask.png');
+}
+div.cover { color:transparent;
+	transition: color .3s linear;
+	padding: 20px;
+  height:520px; 
+  width: 268px;
+}
+.five {
+	border: solid #d7ac00 5px;
+}
+.four {
+	border: solid #AAB3AB 5px;
+}
+.three {
+	border: solid black 5px;
+}
+body {
+	background-color: #232323;
+	font: Sans-serif;
+}
+h1 {
+	color: white;
+	font-size: 60px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+.champPic {
+	z-index: -2;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+h2 {
+	color: #d5c300;
+	float: left;
+}
+.points {float: right;
+color: #fff5cb;
+font-size: 24px;
+ }
+ .stats {
+ 	clear: both;
+ 	font-size: 20px;
+ 	line-height: 120%;
+ }
+ .topGradetitle {
+ 
+ 	float: left;
+
+ }
+ .grade {
+ 	text-align:right;
+ }
+ .topkdatitle {
+ 	float: left;
+
+ }
+ .topkda {
+ 	text-align:right;
+
+ }
+ .kdatitle {
+ 	float: left;
+
+ }
+ .avgkda {
+ 	text-align:right;
+ }
+ .wintitle {
+ 	float: left;
+
+ }
+ .winloss { 
+ 	text-align:right;
+ }
+ form {
+ 	width: 500px;
+ 	margin-top: 20%;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+input[type="text"] {
+	padding: 12px;
+	font-size: 30px;
+	width: 350px;
+	border-radius: 8px;
+}

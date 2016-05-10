@@ -1,0 +1,62 @@
+{% extends "doransbase.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="loading">
+	<img src="{% static "img/default.gif" %}">
+</div>
+
+<script>
+
+	function getParameterByName(name) {
+	    url = window.location.href;
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+
+	
+
+	$( document ).ready(function() {
+		//print("Ready");
+		setInterval(function() { 
+			pull(); 
+		}, 5000);
+
+	});
+	
+	function pull() {
+		region = getParameterByName("region");
+		summ = getParameterByName("summ");
+		//print(Pull");
+		console.log("Pull");
+		$.ajax ({
+			type: "GET",
+			data: {
+				region: region,
+				summ: summ
+			},
+			dataType: "json",
+			success: function(data) {
+				console.log("Function");
+				if (data.success == "True") {
+					$('#loading').css("visibility", "hidden");
+					location.reload()
+				} 
+				else {
+					console.log("Visible");
+					$('#loading').css("visibility", "visible");
+				}
+			}
+		});
+	}
+
+</script>
+
+
+
+{% endblock %}

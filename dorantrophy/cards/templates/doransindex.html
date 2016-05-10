@@ -1,0 +1,25 @@
+{% extends "doransbase.html" %}
+
+{% block content %}
+
+<form action="cards" method="get">
+
+	<input class="summinput" type="text" name="summ" value="Summoner Name" onfocus="if(this.value == 'Summoner Name') { this.value = ''; }"> </input>
+	<select name="region">
+		<option value="NA">NA</option>
+		<option value="BR">BR</option>
+		<option value="EUW">EUW</option>
+		<option value="EUNE">EUNE</option>
+		<option value="JP">JP</option>
+		<option value="KR">KR</option>
+		<option value="LAN">LAN</option>
+		<option value="LAS">LAS</option>
+		<option value="OCE">OCE</option>
+		<option value="RU">RU</option>
+		<option value="TR">TR</option>
+
+
+	</select>
+	<input type="submit" value="Go">
+<form>
+{% endblock %}
